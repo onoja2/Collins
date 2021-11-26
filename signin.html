@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="sit.css">
+    <title>Sign In or Login</title>
+</head>
+<body class="lit">
+    <h1>Sign In or Login</h1>
+    <p id="message" style="font-size: 25px; color: blue;"></p>
+
+    <div style="text-align: center;">
+        <br> <input type="email" placeholder="Enter Email" id="email" required style="width: 500px; height: 50px; border-radius: 20px; border-color:red; font-size: 30px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"> <br> 
+        <br> <input type="password" placeholder="Enter Password" id="password" required style="width: 500px; height: 50px; border-radius: 20px; border-color:red; font-size: 30px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;"> <br>
+        <br> <select  class="form-select" aria-label="Default select example" style="width: 500px; height: 50px; border-radius: 20px; border-color:red; font-size: 30px; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;" required> <br>> <br>
+            <option selected>Open this to select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select>
+        <br><br> <button class="btn btn-danger" onclick="life()" style="font-size: 40px; width: 200px; height: 50px; border-radius: 50px; border-color:green;">Login</button> <br><br>
+         </div>
+
+         <script>
+            function life(){
+                var email = document.getElementById("email").value
+                var password = document.getElementById("password").value
+                if(email === "" || password === ""){
+                    document.getElementById("message").innerHTML = "Inputs Is Required"
+                }
+                else if(email.match(!/\S+@\S+\.\S+/)){
+                document.getElementById("message").innerHTML = "Enter A Valid Email"
+                }
+                else if(password.length > 15){
+                    document.getElementById("message").innerHTML = "Incorrect Password"
+                } else{
+                    document.getElementById("message").innerHTML = "Welcome, Login Successfully"
+                    window.location.href="gallary.html"
+                }
+    
+            }
+        </script>
+</body>
+</html>
